@@ -24,6 +24,7 @@ router.route('/stores')
                 res.status(400).json({ "error": err.message });
                 return;
             }
+            data.datas = rows
             data.message = 'OK!'
             data.path = '/api/stores'
             data.method ='GET'
@@ -73,7 +74,7 @@ router.route('/stores/:store_id')
                 res.status(400).json({ "error": err.message });
                 return;
             }
-            data = rows ;
+            data.datas = rows ;
             data.message = 'OK!'
             data.path = '/api/products'
             data.method ='GET'
@@ -108,7 +109,7 @@ router.route('/products')
                 res.status(400).json({ "error": err.message });
                 return;
             }
-            data = rows 
+            data.datas = rows 
             data.message = 'OK!'
             data.path = '/api/products'
             data.method ='GET'
